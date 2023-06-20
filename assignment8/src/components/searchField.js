@@ -8,11 +8,6 @@ class SearchField extends Component {
     };
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.search();
-  };
-
   handleChange = (e) => {
     this.setState({ searchTerm: e.target.value });
   };
@@ -28,13 +23,15 @@ class SearchField extends Component {
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <input
             value={searchTerm}
             onChange={this.handleChange}
             placeholder="Enter what you are looking for:"
           />
-          <button onClick={this.search}>Search</button>
+          <button type="button" onClick={this.search}>
+            Search
+          </button>
         </form>
       </div>
     );
