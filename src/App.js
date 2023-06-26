@@ -29,7 +29,7 @@ class App extends Component {
 
     async handleSearch(searchTerm) {
         try {
-            const response = await fetch(`http://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=${API_KEY}`);
+            const response = await fetch(`https://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=${API_KEY}`);
             const data = await response.json();
             this.setState({ gifs: data.data });
         } catch (error) {
